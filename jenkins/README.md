@@ -22,3 +22,8 @@ printf $(kubectl get secret --namespace jenkins jenkins -o jsonpath="{.data.jenk
 
 
 Upgrade Jenkins and fix plugin issues (there alway is some)
+
+
+## Resources
+https://github.com/lachie83/croc-hunter
+https://github.com/jenkinsci/kubernetes-plugin
