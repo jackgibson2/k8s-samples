@@ -18,7 +18,7 @@ Clone this repo
 
 helm --namespace jenkins --name jenkins -f ./jenkins-values.yaml install stable/jenkins
 
-printf $(kubectl get secret --namespace jenkins jenkins-jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode) | pbcopy
+printf $(kubectl get secret --namespace jenkins jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode) | pbcopy
 
 
 Upgrade Jenkins and fix plugin issues (there alway is some)
