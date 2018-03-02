@@ -1,4 +1,4 @@
-###Hello Spring Boot
+### Hello Spring Boot
 
 A very simple Spring Boot application that will be used as the canary test a number of things.
 * Maven Docker Builds
