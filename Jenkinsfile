@@ -1,12 +1,14 @@
-podTemplate(label: 'maven', containers: [
-  containerTemplate(name: 'maven', image: 'maven:3.3.9-jdk-8-alpine', ttyEnabled: true, command: 'cat')
-  ]) {
+podTemplate(label: 'docker',
+  containers: [containerTemplate(name: 'docker', image: 'docker:1.11', ttyEnabled: true, command: 'cat')],
+  volumes: [hostPathVolume(hostPath: '/var/run/docker.sock', mountPath: '/var/run/docker.sock')]
+  ) {
 
-  node('maven') {
-    stage('Build a Maven project') {
-      git 'https://github.com/jenkinsci/kubernetes-plugin.git'
-      container('maven') {
-          sh 'mvn -B clean package'
+  def image = "jenkins/jnlp-slave"
+  node('docker') {
+    stage('Build Docker image') {
+      git 'https://github.com/jenkinsci/docker-jnlp-slave.git'
+      container('docker') {
+        sh "docker build -t ${image} ."
       }
     }
   }
