@@ -4,13 +4,13 @@ metadata:
   name: hello-springboot
   namespace: hello-springboot
   annotations:
-    kubernetes.io/tls-acme: "true"
+ ##   kubernetes.io/tls-acme: "true"
     kubernetes.io/ingress.class: "nginx"
 spec:
-  tls:
-  - hosts:
-    - hello-springboot.gtxcodeninja.com
-    secretName: hello-springboot-tls
+#  tls:
+#  - hosts:
+#    - hello-springboot.gtxcodeninja.com
+#    secretName: hello-springboot-tls
   rules:
   - host: hello-springboot.gtxcodeninja.com
     http:

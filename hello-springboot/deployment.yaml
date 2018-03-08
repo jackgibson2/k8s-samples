@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: hello-springboot
-  namespace: hello-ns
+  namespace: hello-springboot
 spec:
   replicas: 1
   template:
