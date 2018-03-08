@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-springboot
+  namespace: hello-ns
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-springboot
+    spec:
+      containers:
+      - image: docker.io/jackgibson2/hello-springboot:1.0-snapshot
+        imagePullPolicy: Always
+        name: hello-springboot
+        ports:
+        - containerPort: 8080
