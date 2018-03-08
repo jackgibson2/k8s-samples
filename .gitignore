@@ -29,6 +29,7 @@ cmake-build-release/
 *.iws
 
 ## Plugin-specific files:
+*.iml
 
 # IntelliJ
 out/
